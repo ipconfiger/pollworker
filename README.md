@@ -45,5 +45,9 @@ The start function has two options
 1. workers: Directly set the number of worker process, if leave it blank or set to 0, proccess count depends on your server's CPU count.
 2. stopwaits: Seconds master process will wait for subprocess on SIGTERM.       
 
+### Tips
 
+If host on supervisor, your must specify configuration item stopwaitsecs, it's better larger than stopwaits your set to pollworker.
+It will stop service safely.
+If your set stopwaits to 0, don't set stopasgroup=true, May leads to subprocess won't quit 
 
